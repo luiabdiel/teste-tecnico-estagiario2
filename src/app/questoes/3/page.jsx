@@ -1,13 +1,7 @@
 const numerosInteiros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+import { sumEvenNumbers } from './../../../utils/sumEvenNumbers';
 
 export default function Questao3() {
-  function sumEvenNumbers(array) {
-    const evenNumbers = array.filter((number) => number % 2 === 0)
-    const totalSum = evenNumbers.reduce((acc, number) => acc + number, 0)
-
-    return totalSum
-  }
-
   const sumOfEvens = sumEvenNumbers(numerosInteiros)
 
   return (
