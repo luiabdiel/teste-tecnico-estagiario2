@@ -1,24 +1,7 @@
 "use client"
 
 import styled from "styled-components";
-
-const produtos = [
-  {
-    id: 1,
-    nome: "Camiseta",
-    preco: 10.99,
-  },
-  {
-    id: 2,
-    nome: "Calça",
-    preco: 19.99,
-  },
-  {
-    id: 3,
-    nome: "Saia",
-    preco: 19.99,
-  },
-];
+import useProducts from './../../../hooks/use-products';
 
 const ProductListContainer  = styled.ul`
   display: flex;
@@ -60,7 +43,9 @@ const ProductContainer = styled.div`
   }
 `
 
-function ProductList({ productList }) {
+function ProductList() {
+  const { productList } = useProducts()
+
   return (
     <div>
       <h1>Lista de Produtos</h1>
@@ -85,7 +70,7 @@ export default function Questao4() {
         objetos de produto e renderiza uma lista de produtos. Cada produto deve
         exibir seu nome e preço.
       </p>
-      <ProductList productList={produtos} />
+      <ProductList />
     </ProductContainer>
   );
 }
