@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import useProducts from './../../../hooks/use-products';
+import formatPrice from './../../../utils/format';
 
 const ProductListContainer  = styled.ul`
   display: flex;
@@ -53,7 +54,7 @@ function ProductList() {
         {productList && productList.map((product) => (
           <ProductItem key={product.id}>
            <p>{product.nome}</p>
-           <span>R${product.preco}</span>
+           <span>{formatPrice(product.preco)}</span>
           </ProductItem>
         ))}
       </ProductListContainer>
